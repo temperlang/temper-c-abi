@@ -15,7 +15,7 @@ class String:
 
     def __init__(self, value):
         self.value = value
-        w.finalize(self, _lib.hello_String_free, value)
+        w.finalize(self, _lib.hello_String_free, value).atexit = False
 
     def __str__(self):
         length: int = _lib.hello_String_length(self.value) + 1

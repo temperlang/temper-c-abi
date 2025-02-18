@@ -1,5 +1,4 @@
 import contextlib as ctx
-import hello as h
 import ctypes as c
 import pathlib as p
 import sys as s

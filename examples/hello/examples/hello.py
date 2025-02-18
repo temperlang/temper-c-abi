@@ -1,3 +1,4 @@
+import contextlib as ctx
 import hello as h
 import ctypes as c
 import pathlib as p
@@ -9,41 +10,25 @@ def init():
     _lib.hello_init()
 
 
-# def greeting_for(name: str) -> str:
-#     name_string = _lib.hello_String_new(name.encode())
-#     try:
-#         return _string_value(_lib.hello_greeting_for(name_string))
-#     finally:
-#         _lib.hello_String_free(name_string)
-
-
 def greeting_for(name: str) -> str:
-    with String.from_str(name) as name_string:
-        with String(_lib.hello_greeting_for(name_string.value)) as greeting:
-            return str(greeting)
+    with _string_mktemp(name) as name_string:
+        return _string_to_str(_lib.hello_greeting_for(name_string))
 
 
-class String:
-    def from_str(s: str):
-        return String(_lib.hello_String_new(s.encode()))
-
-    def __init__(self, value):
-        self.value = value
-
-    def __enter__(self):
-        return self
-
-    def __exit__(self, exc_type, exc_val, exc_tb):
-        _lib.hello_String_free(self.value)
-
-    def __str__(self):
-        length: int = _lib.hello_String_length(self.value) + 1
-        buffer = c.create_string_buffer(length)
-        _lib.hello_String_copy(self.value, buffer, length)
-        return buffer.value.decode()
+def _string_make(s: str):
+    return _lib.hello_String_new(s.encode())
 
 
-def _string_value(hs):
+@ctx.contextmanager
+def _string_mktemp(s: str):
+    hs = _string_make(s)
+    try:
+        yield hs
+    finally:
+        _lib.hello_String_free(hs)
+
+
+def _string_to_str(hs):
     try:
         length: int = _lib.hello_String_length(hs) + 1
         buffer = c.create_string_buffer(length)

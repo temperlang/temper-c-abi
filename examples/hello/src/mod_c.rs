@@ -33,14 +33,11 @@ unsafe extern "C" fn hello_String_new(
     length: usize,
 ) -> *const String {
     let result = match length {
-        0 => std::ffi::CStr::from_ptr(string)
-            .to_str()
-            .map(|s| s.to_string()),
-        _ => std::str::from_utf8(std::slice::from_raw_parts(string as *const u8, length))
-            .map(|s| s.to_string()),
+        0 => std::ffi::CStr::from_ptr(string).to_str(),
+        _ => std::str::from_utf8(std::slice::from_raw_parts(string as *const u8, length)),
     };
     match result {
-        Ok(string) => std::sync::Arc::into_raw(std::sync::Arc::new(string)),
+        Ok(string) => std::sync::Arc::into_raw(std::sync::Arc::new(string.to_string())),
         Err(_) => std::ptr::null(),
     }
 }

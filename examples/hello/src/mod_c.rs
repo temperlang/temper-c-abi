@@ -28,10 +28,20 @@ unsafe extern "C" fn hello_String_length(selfish: *const String) -> usize {
 }
 
 #[no_mangle]
-unsafe extern "C" fn hello_String_new(string: *const std::ffi::c_char) -> *const String {
-    match std::ffi::CStr::from_ptr(string).to_str() {
-        Ok(string) => std::sync::Arc::into_raw(std::sync::Arc::new(string.to_string())),
-        Err(_) => std::ptr::null_mut(),
+unsafe extern "C" fn hello_String_new(
+    string: *const std::ffi::c_char,
+    length: usize,
+) -> *const String {
+    let result = match length {
+        0 => std::ffi::CStr::from_ptr(string)
+            .to_str()
+            .map(|s| s.to_string()),
+        _ => std::str::from_utf8(std::slice::from_raw_parts(string as *const u8, length))
+            .map(|s| s.to_string()),
+    };
+    match result {
+        Ok(string) => std::sync::Arc::into_raw(std::sync::Arc::new(string)),
+        Err(_) => std::ptr::null(),
     }
 }
 

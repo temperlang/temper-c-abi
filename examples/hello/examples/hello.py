@@ -11,17 +11,20 @@ def greeting_for(name: str) -> str:
 
 class String:
     def from_str(s: str):
-        return String(_lib.hello_String_new(s.encode()))
+        return String(_lib.hello_String_new(s.encode(), len(s)))
 
     def __init__(self, value):
         self.value = value
+        # For things that are just memory, we don't need to clean at exit.
         w.finalize(self, _lib.hello_String_free, value).atexit = False
 
     def __str__(self):
         length: int = _lib.hello_String_length(self.value) + 1
-        buffer = c.create_string_buffer(length)
-        _lib.hello_String_copy(self.value, buffer, length)
-        return buffer.value.decode()
+        # Use bytearray to support internal null chars.
+        buffer = bytearray(length)
+        buffer_array = (c.c_char * len(buffer)).from_buffer(buffer)
+        _lib.hello_String_copy(self.value, buffer_array, length)
+        return buffer.decode()
 
 
 def _choose_lib_name(base: str) -> str:

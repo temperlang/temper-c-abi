@@ -1,0 +1,48 @@
+warning: output filename collision.
+The bin target `hello` in package `hello v0.0.1 (C:\Users\work2\Documents\projects\tutorial\temper.out\rust\hello)` has the same output filename as the lib target `hello` in package `hello v0.0.1 (C:\Users\work2\Documents\projects\tutorial\temper.out\rust\hello)`.
+Colliding filename is: C:\Users\work2\Documents\projects\tutorial\temper.out\rust\hello\target\debug\deps\hello.pdb
+The targets should have unique names.
+Consider changing their names to be unique or compiling them separately.
+This may become a hard error in the future; see <https://github.com/rust-lang/cargo/issues/6313>.
+warning: output filename collision.
+The bin target `hello` in package `hello v0.0.1 (C:\Users\work2\Documents\projects\tutorial\temper.out\rust\hello)` has the same output filename as the lib target `hello` in package `hello v0.0.1 (C:\Users\work2\Documents\projects\tutorial\temper.out\rust\hello)`.
+Colliding filename is: C:\Users\work2\Documents\projects\tutorial\temper.out\rust\hello\target\debug\hello.pdb
+The targets should have unique names.
+Consider changing their names to be unique or compiling them separately.
+This may become a hard error in the future; see <https://github.com/rust-lang/cargo/issues/6313>.
+   Compiling hello v0.0.1 (C:\Users\work2\Documents\projects\tutorial\temper.out\rust\hello)
+warning: unused import: `ListBuilder`
+ --> src\support\mapped.rs:1:40
+  |
+1 | use super::{i32_to_usize, Error, List, ListBuilder, Listed, Result, ToList};
+  |                                        ^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: unused imports: `cell::RefCell`, `hash::Hash`
+ --> src\support\promise.rs:3:5
+  |
+3 |     cell::RefCell,
+  |     ^^^^^^^^^^^^^
+4 |     collections::VecDeque,
+5 |     hash::Hash,
+  |     ^^^^^^^^^^
+
+warning: unused import: `crate::support::Pair`
+ --> src\mod.rs:1:5
+  |
+1 | use crate::support::Pair;
+  |     ^^^^^^^^^^^^^^^^^^^^
+
+error[E0119]: conflicting implementations of trait `IfAnyValue<AnyValue>` for type `AlwaysFalse`
+   --> src\support\mod.rs:111:9
+    |
+106 |         impl IfAnyValue<AnyValue> for AlwaysFalse {
+    |         ----------------------------------------- first implementation here
+...
+111 |         impl<T: 'static> IfAnyValue<T> for AlwaysFalse {
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ conflicting implementation for `AlwaysFalse`
+
+For more information about this error, try `rustc --explain E0119`.
+warning: `hello` (lib) generated 3 warnings
+error: could not compile `hello` (lib) due to previous error; 3 warnings emitted

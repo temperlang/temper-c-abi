@@ -1,0 +1,666 @@
+    Updating crates.io index
+   Compiling hashbrown v0.15.2
+   Compiling equivalent v1.0.2
+   Compiling indexmap v2.7.1
+   Compiling std v0.4.0 (C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std)
+error: format argument must be a string literal
+  --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\testing\mod.rs:33:16
+   |
+33 |         todo!( & self) ? ;
+   |                ^^^^^^
+   |
+help: you might be missing a string literal to format with
+   |
+33 |         todo!( "{}", & self) ? ;
+   |                +++++
+
+error: format argument must be a string literal
+  --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\testing\mod.rs:40:16
+   |
+40 |         todo!( & self) ? ;
+   |                ^^^^^^
+   |
+help: you might be missing a string literal to format with
+   |
+40 |         todo!( "{}", & self) ? ;
+   |                +++++
+
+error: associated function in `impl` without body
+   --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\temporal\mod.rs:191:1
+    |
+191 | pub fn today() -> Date;
+    | ^^^^^^^^^^^^^^^^^^^^^^-
+    |                       |
+    |                       help: provide a definition for the function: `{ <body> }`
+
+error: associated function in `impl` without body
+   --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\regex\mod.rs:807:1
+    |
+807 | fn compiled_found(& self, compiled__275: crate::support::AnyValue, text__276: impl crate::support::ToArcString) -> bool;
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-
+    |                                                                                                                        |
+    |                                                                                                                        help: provide a definition for the function: `{ <body> }`
+
+error: associated function in `impl` without body
+   --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\regex\mod.rs:808:1
+    |
+808 | fn compiled_find(& self, compiled__279: crate::support::AnyValue, text__280: impl crate::support::ToArcString, begin__281: usize, regexRefs__282: RegexRefs) -> crate::support::Result<Match>;
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-
+    |                                                                                                                                                                                              |
+    |                                                                                                                                                                                              help: provide a definition for the function: `{ <body> }`
+
+error: associated function in `impl` without body
+   --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\regex\mod.rs:809:1
+    |
+809 | fn compiled_replace(& self, compiled__285: crate::support::AnyValue, text__286: impl crate::support::ToArcString, format__287: std::sync::Arc<dyn Fn (Match) -> std::sync::Arc<String> + std::marker::Send + std::marker::Sync>, regexRefs__288: RegexRefs) -> std::sync::Arc<String>;
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-
+    |                                                                                                                                                                                                                                                                                      |
+    |                                                                                                                                                                                                                                                                                      help: provide a definition for the function: `{ <body> }`
+
+error: associated function in `impl` without body
+   --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\regex\mod.rs:810:1
+    |
+810 | fn compiled_split(& self, compiled__291: crate::support::AnyValue, text__292: impl crate::support::ToArcString, regexRefs__293: RegexRefs) -> crate::support::List<std::sync::Arc<String>>;
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-
+    |                                                                                                                                                                                           |
+    |                                                                                                                                                                                           help: provide a definition for the function: `{ <body> }`
+
+error: associated function in `impl` without body
+   --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\regex\mod.rs:821:1
+    |
+821 | pub fn regex_compile_formatted(data__297: RegexNode, formatted__298: impl crate::support::ToArcString) -> crate::support::AnyValue;
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-
+    |                                                                                                                                   |
+    |                                                                                                                                   help: provide a definition for the function: `{ <body> }`
+
+error[E0401]: can't use generic parameters from outer item
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1424:32
+     |
+1419 | impl<T> ListJsonAdapter<T> {
+     |      - type parameter from outer item
+...
+1423 |     #[ derive(Clone)] struct ClosureGroup___5 {
+     |                                              - help: try introducing a local generic parameter here: `<T>`
+1424 |     this__158: ListJsonAdapter<T>, p__738: JsonProducer
+     |                                ^ use of generic parameter from outer item
+
+error[E0401]: can't use generic parameters from outer item
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1427:34
+     |
+1419 | impl<T> ListJsonAdapter<T> {
+     |      - type parameter from outer item
+...
+1426 | impl ClosureGroup___5 {
+     |     - help: try introducing a local generic parameter here: `<T>`
+1427 |     fn fn__2356(& self, el__740: T) {
+     |                                  ^ use of generic parameter from outer item
+
+error[E0412]: cannot find type `T` in this scope
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1303:56
+     |
+1303 | crate::impl_any_value_trait_for_interface!(JsonAdapter<T>);
+     |                                                        ^ not found in this scope
+
+error[E0412]: cannot find type `T` in this scope
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1469:63
+     |
+1469 | fn encode_to_json(& self, x__737: impl crate::support::ToList<T>, p__738: JsonProducer) {
+     |                                                               ^ not found in this scope
+     |
+help: you might be missing a type parameter
+     |
+1468 | impl<T> JsonAdapterTrait for ListJsonAdapter {
+     |     +++
+
+error[E0412]: cannot find type `T` in this scope
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1472:129
+     |
+1472 | fn decode_from_json(& self, t__742: JsonSyntaxTree, ic__743: InterchangeContext) -> crate::support::Result<crate::support::List<T>> {
+     |                                                                                                                                 ^ not found in this scope
+     |
+help: you might be missing a type parameter
+     |
+1468 | impl<T> JsonAdapterTrait for ListJsonAdapter {
+     |     +++
+
+error[E0412]: cannot find type `T` in this scope
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1509:42
+     |
+1509 | fn encode_to_json(& self, x__756: Option<T>, p__757: JsonProducer) {
+     |                                          ^ not found in this scope
+     |
+help: you might be missing a type parameter
+     |
+1508 | impl<T> JsonAdapterTrait for OrNullJsonAdapter {
+     |     +++
+
+error[E0412]: cannot find type `T` in this scope
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1512:115
+     |
+1512 | fn decode_from_json(& self, t__760: JsonSyntaxTree, ic__761: InterchangeContext) -> crate::support::Result<Option<T>> {
+     |                                                                                                                   ^ not found in this scope
+     |
+help: you might be missing a type parameter
+     |
+1508 | impl<T> JsonAdapterTrait for OrNullJsonAdapter {
+     |     +++
+
+error[E0412]: cannot find type `JsonString` in this scope
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\temporal\mod.rs:241:38
+     |
+241  |     t___198 = crate::support::cast::<JsonString>(t__91.clone()).ok_or_else(| | crate::support::Error::new()) ? ;
+     |                                      ^^^^^^^^^^
+     |
+    ::: C:\Users\work2\.rustup\toolchains\stable-x86_64-pc-windows-msvc\lib/rustlib/src/rust\library\alloc\src\string.rs:2425:1
+     |
+2425 | pub trait ToString {
+     | ------------------ similarly named trait `ToString` defined here
+     |
+help: a trait with a similar name exists
+     |
+241  |     t___198 = crate::support::cast::<ToString>(t__91.clone()).ok_or_else(| | crate::support::Error::new()) ? ;
+     |                                      ~~~~~~~~
+help: consider importing this struct
+     |
+1    + use crate::json::JsonString;
+     |
+
+warning: unused import: `ListBuilder`
+ --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\support\mapped.rs:1:40
+  |
+1 | use super::{i32_to_usize, Error, List, ListBuilder, Listed, Result, ToList};
+  |                                        ^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: unused imports: `cell::RefCell`, `hash::Hash`
+ --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\support\promise.rs:3:5
+  |
+3 |     cell::RefCell,
+  |     ^^^^^^^^^^^^^
+4 |     collections::VecDeque,
+5 |     hash::Hash,
+  |     ^^^^^^^^^^
+
+warning: unused import: `crate::support::Pair`
+ --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\strings\mod.rs:1:5
+  |
+1 | use crate::support::Pair;
+  |     ^^^^^^^^^^^^^^^^^^^^
+
+warning: type `ClosureGroup___1` should have an upper camel case name
+  --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\strings\mod.rs:85:30
+   |
+85 |     #[ derive(Clone)] struct ClosureGroup___1 {}
+   |                              ^^^^^^^^^^^^^^^^ help: convert the identifier to upper camel case: `ClosureGroup1`
+   |
+   = note: `#[warn(non_camel_case_types)]` on by default
+
+warning: type `ClosureGroup___1` should have an upper camel case name
+  --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\testing\mod.rs:68:34
+   |
+68 |         #[ derive(Clone)] struct ClosureGroup___1 {}
+   |                                  ^^^^^^^^^^^^^^^^ help: convert the identifier to upper camel case: `ClosureGroup1`
+
+warning: type `ClosureGroup___2` should have an upper camel case name
+   --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\testing\mod.rs:102:26
+    |
+102 | #[ derive(Clone)] struct ClosureGroup___2 {}
+    |                          ^^^^^^^^^^^^^^^^ help: convert the identifier to upper camel case: `ClosureGroup2`
+
+warning: type `ClosureGroup___3` should have an upper camel case name
+   --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\testing\mod.rs:174:34
+    |
+174 |         #[ derive(Clone)] struct ClosureGroup___3 {}
+    |                                  ^^^^^^^^^^^^^^^^ help: convert the identifier to upper camel case: `ClosureGroup3`
+
+warning: type `ClosureGroup___4` should have an upper camel case name
+   --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\testing\mod.rs:195:30
+    |
+195 |     #[ derive(Clone)] struct ClosureGroup___4 {}
+    |                              ^^^^^^^^^^^^^^^^ help: convert the identifier to upper camel case: `ClosureGroup4`
+
+warning: type `ClosureGroup___5` should have an upper camel case name
+   --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\testing\mod.rs:200:34
+    |
+200 |         #[ derive(Clone)] struct ClosureGroup___5 {}
+    |                                  ^^^^^^^^^^^^^^^^ help: convert the identifier to upper camel case: `ClosureGroup5`
+
+warning: type `ClosureGroup___6` should have an upper camel case name
+   --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\testing\mod.rs:237:30
+    |
+237 |     #[ derive(Clone)] struct ClosureGroup___6 {}
+    |                              ^^^^^^^^^^^^^^^^ help: convert the identifier to upper camel case: `ClosureGroup6`
+
+warning: type `ClosureGroup___7` should have an upper camel case name
+   --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\testing\mod.rs:265:26
+    |
+265 | #[ derive(Clone)] struct ClosureGroup___7 {
+    |                          ^^^^^^^^^^^^^^^^ help: convert the identifier to upper camel case: `ClosureGroup7`
+
+warning: type `ClosureGroup___8` should have an upper camel case name
+   --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\testing\mod.rs:295:30
+    |
+295 |     #[ derive(Clone)] struct ClosureGroup___8 {}
+    |                              ^^^^^^^^^^^^^^^^ help: convert the identifier to upper camel case: `ClosureGroup8`
+
+warning: unused import: `crate::support::Pair`
+ --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1:5
+  |
+1 | use crate::support::Pair;
+  |     ^^^^^^^^^^^^^^^^^^^^
+
+warning: type `ClosureGroup___1` should have an upper camel case name
+   --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:232:30
+    |
+232 |     #[ derive(Clone)] struct ClosureGroup___1 {
+    |                              ^^^^^^^^^^^^^^^^ help: convert the identifier to upper camel case: `ClosureGroup1`
+
+warning: type `ClosureGroup___2` should have an upper camel case name
+   --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:239:34
+    |
+239 |         #[ derive(Clone)] struct ClosureGroup___2 {
+    |                                  ^^^^^^^^^^^^^^^^ help: convert the identifier to upper camel case: `ClosureGroup2`
+
+warning: type `ClosureGroup___3` should have an upper camel case name
+   --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:296:30
+    |
+296 |     #[ derive(Clone)] struct ClosureGroup___3 {
+    |                              ^^^^^^^^^^^^^^^^ help: convert the identifier to upper camel case: `ClosureGroup3`
+
+warning: type `ClosureGroup___4` should have an upper camel case name
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1063:46
+     |
+1063 |                     #[ derive(Clone)] struct ClosureGroup___4 {
+     |                                              ^^^^^^^^^^^^^^^^ help: convert the identifier to upper camel case: `ClosureGroup4`
+
+warning: type `ClosureGroup___5` should have an upper camel case name
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1423:30
+     |
+1423 |     #[ derive(Clone)] struct ClosureGroup___5 {
+     |                              ^^^^^^^^^^^^^^^^ help: convert the identifier to upper camel case: `ClosureGroup5`
+
+warning: unused label
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:2683:5
+     |
+2683 |     'orelse___874: {
+     |     ^^^^^^^^^^^^^
+     |
+     = note: `#[warn(unused_labels)]` on by default
+
+warning: unused import: `crate::support::Pair`
+ --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\temporal\mod.rs:1:5
+  |
+1 | use crate::support::Pair;
+  |     ^^^^^^^^^^^^^^^^^^^^
+
+error[E0107]: missing generics for trait `JsonAdapterTrait`
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1297:61
+     |
+1297 | #[ derive(Clone)] pub struct JsonAdapter(std::sync::Arc<dyn JsonAdapterTrait>);
+     |                                                             ^^^^^^^^^^^^^^^^ expected 1 generic argument
+     |
+note: trait defined here, with 1 generic parameter: `T`
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1291:11
+     |
+1291 | pub trait JsonAdapterTrait<T>: crate::support::AsAnyValue + crate::support::AnyValueTrait + std::marker::Send + std::marker::Sync {
+     |           ^^^^^^^^^^^^^^^^ -
+help: add missing generic argument
+     |
+1297 | #[ derive(Clone)] pub struct JsonAdapter(std::sync::Arc<dyn JsonAdapterTrait<T>>);
+     |                                                                             +++
+
+error[E0107]: struct takes 0 generic arguments but 1 generic argument was supplied
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1416:16
+     |
+1416 | adapter_for_t: JsonAdapter<T>, phantom_T: std::marker::PhantomData<T>
+     |                ^^^^^^^^^^^--- help: remove these generics
+     |                |
+     |                expected 0 generic arguments
+     |
+note: struct defined here, with 0 generic parameters
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1297:30
+     |
+1297 | #[ derive(Clone)] pub struct JsonAdapter(std::sync::Arc<dyn JsonAdapterTrait>);
+     |                              ^^^^^^^^^^^
+
+error[E0107]: struct takes 0 generic arguments but 1 generic argument was supplied
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1478:16
+     |
+1478 | adapter_for_t: JsonAdapter<T>, phantom_T: std::marker::PhantomData<T>
+     |                ^^^^^^^^^^^--- help: remove these generics
+     |                |
+     |                expected 0 generic arguments
+     |
+note: struct defined here, with 0 generic parameters
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1297:30
+     |
+1297 | #[ derive(Clone)] pub struct JsonAdapter(std::sync::Arc<dyn JsonAdapterTrait>);
+     |                              ^^^^^^^^^^^
+
+error[E0107]: struct takes 0 generic arguments but 1 generic argument was supplied
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1303:44
+     |
+1303 | crate::impl_any_value_trait_for_interface!(JsonAdapter<T>);
+     |                                            ^^^^^^^^^^^--- help: remove these generics
+     |                                            |
+     |                                            expected 0 generic arguments
+     |
+note: struct defined here, with 0 generic parameters
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1297:30
+     |
+1297 | #[ derive(Clone)] pub struct JsonAdapter(std::sync::Arc<dyn JsonAdapterTrait>);
+     |                              ^^^^^^^^^^^
+
+error[E0107]: missing generics for trait `JsonAdapterTrait`
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1326:6
+     |
+1326 | impl JsonAdapterTrait for BooleanJsonAdapter {
+     |      ^^^^^^^^^^^^^^^^ expected 1 generic argument
+     |
+note: trait defined here, with 1 generic parameter: `T`
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1291:11
+     |
+1291 | pub trait JsonAdapterTrait<T>: crate::support::AsAnyValue + crate::support::AnyValueTrait + std::marker::Send + std::marker::Sync {
+     |           ^^^^^^^^^^^^^^^^ -
+help: add missing generic argument
+     |
+1326 | impl JsonAdapterTrait<T> for BooleanJsonAdapter {
+     |                      +++
+
+error[E0107]: missing generics for trait `JsonAdapterTrait`
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1353:6
+     |
+1353 | impl JsonAdapterTrait for Float64JsonAdapter {
+     |      ^^^^^^^^^^^^^^^^ expected 1 generic argument
+     |
+note: trait defined here, with 1 generic parameter: `T`
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1291:11
+     |
+1291 | pub trait JsonAdapterTrait<T>: crate::support::AsAnyValue + crate::support::AnyValueTrait + std::marker::Send + std::marker::Sync {
+     |           ^^^^^^^^^^^^^^^^ -
+help: add missing generic argument
+     |
+1353 | impl JsonAdapterTrait<T> for Float64JsonAdapter {
+     |                      +++
+
+error[E0107]: missing generics for trait `JsonAdapterTrait`
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1380:6
+     |
+1380 | impl JsonAdapterTrait for IntJsonAdapter {
+     |      ^^^^^^^^^^^^^^^^ expected 1 generic argument
+     |
+note: trait defined here, with 1 generic parameter: `T`
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1291:11
+     |
+1291 | pub trait JsonAdapterTrait<T>: crate::support::AsAnyValue + crate::support::AnyValueTrait + std::marker::Send + std::marker::Sync {
+     |           ^^^^^^^^^^^^^^^^ -
+help: add missing generic argument
+     |
+1380 | impl JsonAdapterTrait<T> for IntJsonAdapter {
+     |                      +++
+
+error[E0107]: missing generics for trait `JsonAdapterTrait`
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1406:6
+     |
+1406 | impl JsonAdapterTrait for StringJsonAdapter {
+     |      ^^^^^^^^^^^^^^^^ expected 1 generic argument
+     |
+note: trait defined here, with 1 generic parameter: `T`
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1291:11
+     |
+1291 | pub trait JsonAdapterTrait<T>: crate::support::AsAnyValue + crate::support::AnyValueTrait + std::marker::Send + std::marker::Sync {
+     |           ^^^^^^^^^^^^^^^^ -
+help: add missing generic argument
+     |
+1406 | impl JsonAdapterTrait<T> for StringJsonAdapter {
+     |                      +++
+
+error[E0107]: missing generics for struct `ListJsonAdapter`
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1468:27
+     |
+1468 | impl JsonAdapterTrait for ListJsonAdapter {
+     |                           ^^^^^^^^^^^^^^^ expected 1 generic argument
+     |
+note: struct defined here, with 1 generic parameter: `T`
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1418:26
+     |
+1418 | #[ derive(Clone)] struct ListJsonAdapter<T>(std::sync::Arc<std::sync::RwLock<ListJsonAdapterStruct<T>>>);
+     |                          ^^^^^^^^^^^^^^^ -
+help: add missing generic argument
+     |
+1468 | impl JsonAdapterTrait for ListJsonAdapter<T> {
+     |                                          +++
+
+error[E0107]: missing generics for trait `JsonAdapterTrait`
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1468:6
+     |
+1468 | impl JsonAdapterTrait for ListJsonAdapter {
+     |      ^^^^^^^^^^^^^^^^ expected 1 generic argument
+     |
+note: trait defined here, with 1 generic parameter: `T`
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1291:11
+     |
+1291 | pub trait JsonAdapterTrait<T>: crate::support::AsAnyValue + crate::support::AnyValueTrait + std::marker::Send + std::marker::Sync {
+     |           ^^^^^^^^^^^^^^^^ -
+help: add missing generic argument
+     |
+1468 | impl JsonAdapterTrait<T> for ListJsonAdapter {
+     |                      +++
+
+error[E0107]: missing generics for struct `OrNullJsonAdapter`
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1508:27
+     |
+1508 | impl JsonAdapterTrait for OrNullJsonAdapter {
+     |                           ^^^^^^^^^^^^^^^^^ expected 1 generic argument
+     |
+note: struct defined here, with 1 generic parameter: `T`
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1480:30
+     |
+1480 | #[ derive(Clone)] pub struct OrNullJsonAdapter<T>(std::sync::Arc<std::sync::RwLock<OrNullJsonAdapterStruct<T>>>);
+     |                              ^^^^^^^^^^^^^^^^^ -
+help: add missing generic argument
+     |
+1508 | impl JsonAdapterTrait for OrNullJsonAdapter<T> {
+     |                                            +++
+
+error[E0107]: missing generics for trait `JsonAdapterTrait`
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1508:6
+     |
+1508 | impl JsonAdapterTrait for OrNullJsonAdapter {
+     |      ^^^^^^^^^^^^^^^^ expected 1 generic argument
+     |
+note: trait defined here, with 1 generic parameter: `T`
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1291:11
+     |
+1291 | pub trait JsonAdapterTrait<T>: crate::support::AsAnyValue + crate::support::AnyValueTrait + std::marker::Send + std::marker::Sync {
+     |           ^^^^^^^^^^^^^^^^ -
+help: add missing generic argument
+     |
+1508 | impl JsonAdapterTrait<T> for OrNullJsonAdapter {
+     |                      +++
+
+error[E0107]: struct takes 0 generic arguments but 1 generic argument was supplied
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:2714:34
+     |
+2714 | pub fn boolean_json_adapter() -> JsonAdapter<bool> {
+     |                                  ^^^^^^^^^^^------ help: remove these generics
+     |                                  |
+     |                                  expected 0 generic arguments
+     |
+note: struct defined here, with 0 generic parameters
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1297:30
+     |
+1297 | #[ derive(Clone)] pub struct JsonAdapter(std::sync::Arc<dyn JsonAdapterTrait>);
+     |                              ^^^^^^^^^^^
+
+error[E0107]: struct takes 0 generic arguments but 1 generic argument was supplied
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:2717:34
+     |
+2717 | pub fn float64_json_adapter() -> JsonAdapter<f64> {
+     |                                  ^^^^^^^^^^^----- help: remove these generics
+     |                                  |
+     |                                  expected 0 generic arguments
+     |
+note: struct defined here, with 0 generic parameters
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1297:30
+     |
+1297 | #[ derive(Clone)] pub struct JsonAdapter(std::sync::Arc<dyn JsonAdapterTrait>);
+     |                              ^^^^^^^^^^^
+
+error[E0107]: struct takes 0 generic arguments but 1 generic argument was supplied
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:2720:30
+     |
+2720 | pub fn int_json_adapter() -> JsonAdapter<i32> {
+     |                              ^^^^^^^^^^^----- help: remove these generics
+     |                              |
+     |                              expected 0 generic arguments
+     |
+note: struct defined here, with 0 generic parameters
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1297:30
+     |
+1297 | #[ derive(Clone)] pub struct JsonAdapter(std::sync::Arc<dyn JsonAdapterTrait>);
+     |                              ^^^^^^^^^^^
+
+error[E0107]: struct takes 0 generic arguments but 1 generic argument was supplied
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:2723:33
+     |
+2723 | pub fn string_json_adapter() -> JsonAdapter<std::sync::Arc<String>> {
+     |                                 ^^^^^^^^^^^------------------------ help: remove these generics
+     |                                 |
+     |                                 expected 0 generic arguments
+     |
+note: struct defined here, with 0 generic parameters
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1297:30
+     |
+1297 | #[ derive(Clone)] pub struct JsonAdapter(std::sync::Arc<dyn JsonAdapterTrait>);
+     |                              ^^^^^^^^^^^
+
+error[E0107]: struct takes 0 generic arguments but 1 generic argument was supplied
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:2726:47
+     |
+2726 | pub fn list_json_adapter<T>(adapterForT__752: JsonAdapter<T>) -> JsonAdapter<crate::support::List<T>> where T: Clone + std::marker::Send ...
+     |                                               ^^^^^^^^^^^--- help: remove these generics
+     |                                               |
+     |                                               expected 0 generic arguments
+     |
+note: struct defined here, with 0 generic parameters
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1297:30
+     |
+1297 | #[ derive(Clone)] pub struct JsonAdapter(std::sync::Arc<dyn JsonAdapterTrait>);
+     |                              ^^^^^^^^^^^
+
+error[E0107]: struct takes 0 generic arguments but 1 generic argument was supplied
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:2726:66
+     |
+2726 | pub fn list_json_adapter<T>(adapterForT__752: JsonAdapter<T>) -> JsonAdapter<crate::support::List<T>> where T: Clone + std::marker::Send ...
+     |                                                                  ^^^^^^^^^^^------------------------- help: remove these generics
+     |                                                                  |
+     |                                                                  expected 0 generic arguments
+     |
+note: struct defined here, with 0 generic parameters
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1297:30
+     |
+1297 | #[ derive(Clone)] pub struct JsonAdapter(std::sync::Arc<dyn JsonAdapterTrait>);
+     |                              ^^^^^^^^^^^
+
+error[E0107]: missing generics for trait `JsonAdapterTrait`
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1299:26
+     |
+1299 | pub fn new(selfish: impl JsonAdapterTrait + 'static) -> JsonAdapter {
+     |                          ^^^^^^^^^^^^^^^^ expected 1 generic argument
+     |
+note: trait defined here, with 1 generic parameter: `T`
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1291:11
+     |
+1291 | pub trait JsonAdapterTrait<T>: crate::support::AsAnyValue + crate::support::AnyValueTrait + std::marker::Send + std::marker::Sync {
+     |           ^^^^^^^^^^^^^^^^ -
+help: add missing generic argument
+     |
+1299 | pub fn new(selfish: impl JsonAdapterTrait<T> + 'static) -> JsonAdapter {
+     |                                          +++
+
+error[E0107]: missing generics for trait `JsonAdapterTrait`
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1305:19
+     |
+1305 | type Target = dyn JsonAdapterTrait;
+     |                   ^^^^^^^^^^^^^^^^ expected 1 generic argument
+     |
+note: trait defined here, with 1 generic parameter: `T`
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1291:11
+     |
+1291 | pub trait JsonAdapterTrait<T>: crate::support::AsAnyValue + crate::support::AnyValueTrait + std::marker::Send + std::marker::Sync {
+     |           ^^^^^^^^^^^^^^^^ -
+help: add missing generic argument
+     |
+1305 | type Target = dyn JsonAdapterTrait<T>;
+     |                                   +++
+
+error[E0107]: struct takes 0 generic arguments but 1 generic argument was supplied
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1459:30
+     |
+1459 | pub fn new(adapterForT__751: JsonAdapter<T>) -> ListJsonAdapter<T> {
+     |                              ^^^^^^^^^^^--- help: remove these generics
+     |                              |
+     |                              expected 0 generic arguments
+     |
+note: struct defined here, with 0 generic parameters
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1297:30
+     |
+1297 | #[ derive(Clone)] pub struct JsonAdapter(std::sync::Arc<dyn JsonAdapterTrait>);
+     |                              ^^^^^^^^^^^
+
+error[E0107]: struct takes 0 generic arguments but 1 generic argument was supplied
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1499:30
+     |
+1499 | pub fn new(adapterForT__764: JsonAdapter<T>) -> OrNullJsonAdapter<T> {
+     |                              ^^^^^^^^^^^--- help: remove these generics
+     |                              |
+     |                              expected 0 generic arguments
+     |
+note: struct defined here, with 0 generic parameters
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1297:30
+     |
+1297 | #[ derive(Clone)] pub struct JsonAdapter(std::sync::Arc<dyn JsonAdapterTrait>);
+     |                              ^^^^^^^^^^^
+
+error[E0107]: missing generics for trait `JsonAdapterTrait`
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\temporal\mod.rs:45:19
+     |
+45   | impl crate::json::JsonAdapterTrait for DateJsonAdapter {
+     |                   ^^^^^^^^^^^^^^^^ expected 1 generic argument
+     |
+note: trait defined here, with 1 generic parameter: `T`
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1291:11
+     |
+1291 | pub trait JsonAdapterTrait<T>: crate::support::AsAnyValue + crate::support::AnyValueTrait + std::marker::Send + std::marker::Sync {
+     |           ^^^^^^^^^^^^^^^^ -
+help: add missing generic argument
+     |
+45   | impl crate::json::JsonAdapterTrait<T> for DateJsonAdapter {
+     |                                   +++
+
+error[E0107]: struct takes 0 generic arguments but 1 generic argument was supplied
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\temporal\mod.rs:255:39
+     |
+255  | pub fn json_adapter() -> crate::json::JsonAdapter<Date> {
+     |                                       ^^^^^^^^^^^------ help: remove these generics
+     |                                       |
+     |                                       expected 0 generic arguments
+     |
+note: struct defined here, with 0 generic parameters
+    --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\json\mod.rs:1297:30
+     |
+1297 | #[ derive(Clone)] pub struct JsonAdapter(std::sync::Arc<dyn JsonAdapterTrait>);
+     |                              ^^^^^^^^^^^
+
+error[E0425]: cannot find function `fromIsoString__59` in this scope
+   --> C:\Users\work2\Documents\projects\tutorial\temper.out\rust\std\src\temporal\mod.rs:243:18
+    |
+243 |     return__27 = fromIsoString__59(t___342.clone()) ? ;
+    |                  ^^^^^^^^^^^^^^^^^ not found in this scope
+
+Some errors have detailed explanations: E0107, E0401, E0412, E0425.
+For more information about an error, try `rustc --explain E0107`.
+warning: `std` (lib) generated 20 warnings
+error: could not compile `std` (lib) due to 41 previous errors; 20 warnings emitted

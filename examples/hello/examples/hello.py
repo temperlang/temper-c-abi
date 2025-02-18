@@ -5,11 +5,6 @@ import pathlib as p
 import sys as s
 
 
-def init():
-    # TODO Init the ctypes dll stuff here also?
-    _lib.hello_init()
-
-
 def greeting_for(name: str) -> str:
     with _string_mktemp(name) as name_string:
         return _string_to_str(_lib.hello_greeting_for(name_string))
@@ -69,3 +64,6 @@ _lib.hello_greeting_for.restype = c.c_void_p
 
 _lib.hello_init.argtypes = []
 _lib.hello_init.restype = None
+
+# TODO Pull any config from some environmental context???
+_lib.hello_init()

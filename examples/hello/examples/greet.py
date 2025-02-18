@@ -1,13 +1,6 @@
-import hello as h
-import ctypes as c
-import pathlib as p
-import sys as s
+# Copied from: https://temperlang.github.io/tld/tutorial/#use-the-library-from-python
 
+from hello import greeting_for
 
-def main():
-    h.init()
-    print(h.greeting_for("world"))
-
-
-if __name__ == "__main__":
-    main()
+# Also note the change to snake_case for Python.
+print(greeting_for("world"))
